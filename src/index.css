@@ -106,21 +106,19 @@
   animation: fade-in 0.6s ease-out;
 }
 
-.delay-300 {
-  animation-delay: 300ms;
+@keyframes fade-in {
+  "0%": {
+    opacity: "0",
+    transform: "translateY(10px)"
+  },
+  "100%": {
+    opacity: "1",
+    transform: "translateY(0)"
+  }
 }
 
-/* Background cycling animation */
-@keyframes cycle-background {
-  0%, 33.33% {
-    background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=800&fit=crop&crop=center');
-  }
-  33.34%, 66.66% {
-    background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&h=800&fit=crop&crop=center');
-  }
-  66.67%, 100% {
-    background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=800&fit=crop&crop=center');
-  }
+.delay-300 {
+  animation-delay: 300ms;
 }
 
 /* Glassmorphism effect for cards */
