@@ -30,7 +30,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-900">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background images with fade transition */}
       <div className="absolute inset-0">
         {images.map((image, index) => (
@@ -46,7 +46,7 @@ const Hero = () => {
             }}
           >
             {/* Dark overlay for text readability */}
-            <div className="absolute inset-0 bg-black/60"></div>
+            <div className="absolute inset-0 bg-black/50"></div>
           </div>
         ))}
       </div>
@@ -54,50 +54,64 @@ const Hero = () => {
       {/* Navigation controls */}
       <button
         onClick={prevImage}
-        className="absolute left-8 top-1/2 transform -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm border border-white/20"
+        className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
       >
-        <ChevronLeft className="h-5 w-5" />
+        <ChevronLeft className="h-6 w-6" />
       </button>
       
       <button
         onClick={nextImage}
-        className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm border border-white/20"
+        className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
       >
-        <ChevronRight className="h-5 w-5" />
+        <ChevronRight className="h-6 w-6" />
       </button>
 
       {/* Image indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentImage(index)}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
               index === currentImage 
-                ? 'bg-white w-8' 
-                : 'bg-white/40 hover:bg-white/60'
+                ? 'bg-white scale-110' 
+                : 'bg-white/50 hover:bg-white/75'
             }`}
           />
         ))}
       </div>
+
+      {/* Animated background elements */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-500 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      </div>
       
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+      {/* Grid pattern overlay */}
+      <div className="absolute inset-0 opacity-40" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+      }}></div>
+      
+      <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
         <div className="animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-light text-white mb-6 leading-tight tracking-tight">
-            <span className="font-normal">TEK-BAY</span>
+          <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 leading-tight">
+            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300 bg-clip-text text-transparent">
+              TEK-BAY
+            </span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-4 font-light tracking-wide">
-            Technology Solutions for Tomorrow
+          <p className="text-xl md:text-2xl text-blue-100 mb-4 font-light">
+            Where Innovation Meets Excellence
           </p>
-          <p className="text-lg text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed font-light">
-            We deliver innovative technology solutions that transform businesses and drive sustainable growth in the digital age.
+          <p className="text-lg text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Pioneering the future of technology with cutting-edge solutions that transform businesses 
+            and empower digital transformation across industries.
           </p>
         </div>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in delay-300">
           <Button 
             size="lg" 
-            className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-4 text-lg font-medium rounded-none transition-all duration-300 transform hover:scale-105 min-w-[200px]"
+            className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl"
           >
             Get Started
             <ArrowRight className="ml-2 h-5 w-5" />
@@ -105,10 +119,10 @@ const Hero = () => {
           <Button 
             variant="outline" 
             size="lg"
-            className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg rounded-none transition-all duration-300 backdrop-blur-sm min-w-[200px] font-light"
+            className="border-blue-400 text-blue-300 hover:bg-blue-900/50 px-8 py-4 text-lg rounded-full transition-all duration-300 backdrop-blur-sm"
           >
             <Play className="mr-2 h-5 w-5" />
-            Learn More
+            Watch Demo
           </Button>
         </div>
       </div>

@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -94,16 +93,10 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    font-weight: 300;
-    letter-spacing: 0.01em;
   }
   
   html {
     scroll-behavior: smooth;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    letter-spacing: -0.025em;
   }
 }
 

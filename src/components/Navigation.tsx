@@ -13,24 +13,24 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/50">
+    <nav className="fixed top-0 w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-700/50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <span className="text-2xl font-light tracking-wide text-slate-900">
+            <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               TEK-BAY
             </span>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-12">
+            <div className="ml-10 flex items-baseline space-x-8">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-slate-700 hover:text-slate-900 text-sm font-medium transition-colors duration-200 tracking-wide"
+                  className="text-slate-300 hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors duration-200"
                 >
                   {item.name}
                 </a>
@@ -40,7 +40,7 @@ const Navigation = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-slate-900 hover:bg-slate-800 text-white rounded-none px-8 py-2 font-medium tracking-wide">
+            <Button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white rounded-full px-6">
               Contact Us
             </Button>
           </div>
@@ -49,7 +49,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-700 hover:text-slate-900 p-2"
+              className="text-slate-300 hover:text-white p-2"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -59,19 +59,19 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden animate-fade-in">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-slate-200">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-slate-800/95 rounded-lg mt-2">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-slate-700 hover:text-slate-900 block px-3 py-2 text-base font-medium"
+                  className="text-slate-300 hover:text-blue-400 block px-3 py-2 text-base font-medium"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
               <div className="pt-2">
-                <Button className="w-full bg-slate-900 text-white rounded-none font-medium">
+                <Button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-full">
                   Contact Us
                 </Button>
               </div>

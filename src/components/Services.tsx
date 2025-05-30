@@ -36,32 +36,32 @@ const Services = () => {
   ];
 
   return (
-    <section id="solutions" className="py-32 bg-white">
+    <section id="solutions" className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-6 tracking-tight">
-            Our Solutions
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            Our <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Solutions</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Comprehensive technology solutions designed to drive innovation and accelerate your digital transformation journey.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div 
               key={index}
-              className="group p-8 bg-white hover:bg-slate-50 transition-all duration-300 border border-slate-100 hover:border-slate-200"
+              className="group p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-200/50"
             >
-              <div className="mb-8">
-                <div className="w-12 h-12 bg-slate-900 flex items-center justify-center group-hover:bg-slate-800 transition-colors duration-300">
-                  <service.icon className="h-6 w-6 text-white" />
+              <div className="mb-6">
+                <div className="w-14 h-14 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <service.icon className="h-7 w-7 text-white" />
                 </div>
               </div>
-              <h3 className="text-xl font-medium text-slate-900 mb-4 tracking-wide">
+              <h3 className="text-xl font-semibold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
                 {service.title}
               </h3>
-              <p className="text-slate-600 leading-relaxed font-light">
+              <p className="text-slate-600 leading-relaxed">
                 {service.description}
               </p>
             </div>
