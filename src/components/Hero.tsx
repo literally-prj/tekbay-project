@@ -5,6 +5,48 @@ import { Button } from '@/components/ui/button';
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+      {/* Animated background images */}
+      <div className="absolute inset-0">
+        {/* Circuit board image - moving diagonally */}
+        <div 
+          className="absolute w-96 h-96 opacity-20 animate-pulse"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=400&fit=crop&crop=center')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            animation: 'float-diagonal 20s linear infinite',
+            top: '-10%',
+            left: '-10%'
+          }}
+        ></div>
+        
+        {/* AI/Robot image - moving horizontally */}
+        <div 
+          className="absolute w-80 h-80 opacity-15"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=400&fit=crop&crop=center')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            animation: 'float-horizontal 25s linear infinite reverse',
+            top: '60%',
+            right: '-15%'
+          }}
+        ></div>
+        
+        {/* Code/Programming image - moving vertically */}
+        <div 
+          className="absolute w-72 h-72 opacity-20"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=400&fit=crop&crop=center')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            animation: 'float-vertical 30s linear infinite',
+            bottom: '70%',
+            left: '70%'
+          }}
+        ></div>
+      </div>
+
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-500 rounded-full blur-3xl animate-pulse"></div>
