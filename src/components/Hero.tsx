@@ -45,7 +45,7 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Optimized background with better performance */}
+      {/* Background images */}
       <div className="absolute inset-0">
         {images.map((image, index) => (
           <div
@@ -66,12 +66,12 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Simplified floating elements for better performance */}
+      {/* Floating elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(8)].map((_, i) => (
           <div
             key={i}
-            className={`absolute w-2 h-2 bg-cyan-400/30 rounded-full animate-float`}
+            className="absolute w-2 h-2 bg-cyan-400/30 rounded-full animate-float"
             style={{
               left: `${10 + i * 12}%`,
               top: `${20 + (i % 3) * 25}%`,
@@ -111,7 +111,7 @@ const Hero = () => {
         ))}
       </div>
       
-      {/* Main content with better alignment */}
+      {/* Main content */}
       <div className={`relative z-20 text-center container-max px-8 transition-all duration-1000 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}>
@@ -123,24 +123,24 @@ const Hero = () => {
             <Globe className="h-6 w-6 text-cyan-400 animate-pulse-slow" />
           </div>
           
-          {/* Main title with proper alignment */}
+          {/* Main title */}
           <div className="space-y-6">
             <h1 className="text-6xl md:text-8xl font-black text-white leading-tight tracking-tight">
               <span className="text-gradient">TEKBAY</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-cyan-100 font-medium max-w-2xl mx-auto leading-relaxed">
-              Advanced Digital Transformation Solutions
+              Digital Transformation Solutions
             </p>
             
             <p className="text-lg text-slate-300 max-w-4xl mx-auto leading-relaxed animate-fade-in-up">
-              Pioneering the future of logistics and supply chain solutions with cutting-edge technology, 
-              AI-driven processes, and comprehensive security frameworks.
+              Your trusted partner in logistics and supply chain solutions, focused on precision, efficiency, and reliability. 
+              We offer end-to-end services to help businesses operate smarter and save costs.
             </p>
           </div>
         </div>
         
-        {/* Action buttons with proper spacing */}
+        {/* Action buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-12 animate-fade-in-up">
           <Button 
             size="lg" 
@@ -162,12 +162,12 @@ const Hero = () => {
           </Button>
         </div>
 
-        {/* Stats with better alignment */}
+        {/* Stats */}
         <div className="flex justify-center space-x-12 mt-16 animate-fade-in-up">
           {[
-            { label: 'AI Precision', value: '99.9%' },
-            { label: 'Uptime', value: '24/7' },
-            { label: 'Security Level', value: 'Military' }
+            { label: 'Uptime', value: '99.9%' },
+            { label: 'Support', value: '24/7' },
+            { label: 'Vision', value: '2030' }
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-2xl font-bold text-cyan-400 mb-1">
