@@ -24,11 +24,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center">
                 <Phone className="h-4 w-4 mr-3 text-cyan-400" />
-                <span>+966 (11) 123-4567</span>
+                <span>+966 54 118 9716</span>
               </div>
               <div className="flex items-center">
                 <MapPin className="h-4 w-4 mr-3 text-cyan-400" />
-                <span>Riyadh, Saudi Arabia</span>
+                <span>Kingdom of Saudi Arabia</span>
               </div>
             </div>
           </div>
@@ -37,11 +37,10 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Freight & Transportation</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">B2B Supply Chain</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">E-Commerce Solutions</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">IT Security</a></li>
+              <li><a href="#" className="hover:text-cyan-400 transition-colors">IT & Cybersecurity</a></li>
               <li><a href="#" className="hover:text-cyan-400 transition-colors">General Contracting</a></li>
+              <li><a href="#" className="hover:text-cyan-400 transition-colors">Logistics Solutions</a></li>
+              <li><a href="#" className="hover:text-cyan-400 transition-colors">E-Commerce Solutions</a></li>
             </ul>
           </div>
 
@@ -61,7 +60,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-slate-700 pt-8 text-center">
           <p className="text-slate-400">
-            © 2024 TEKBAY Digital Transformation. All rights reserved. Supporting Saudi Arabia's Vision 2030.
+            © 2024 TEKBAY. All rights reserved. Supporting Saudi Arabia's Vision 2030.
           </p>
         </div>
       </div>

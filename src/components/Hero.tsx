@@ -123,15 +123,15 @@ const Hero = () => {
             <Globe className="h-6 w-6 text-cyan-400 animate-pulse-slow" />
           </div>
           
-          {/* Main title */}
+          {/* Logo instead of text */}
           <div className="space-y-6">
-            <h1 className="text-6xl md:text-8xl font-black text-white leading-tight tracking-tight">
-              <span className="text-gradient">TEKBAY</span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-cyan-100 font-medium max-w-2xl mx-auto leading-relaxed">
-              Digital Transformation Solutions
-            </p>
+            <div className="flex justify-center mb-8">
+              <img 
+                src="/lovable-uploads/ec1d4e64-84b4-45a4-82c3-6cca7b51c8ae.png" 
+                alt="TEKBAY Logo" 
+                className="h-32 w-auto object-contain"
+              />
+            </div>
             
             <p className="text-lg text-slate-300 max-w-4xl mx-auto leading-relaxed animate-fade-in-up">
               Your trusted partner in logistics and supply chain solutions, focused on precision, efficiency, and reliability. 

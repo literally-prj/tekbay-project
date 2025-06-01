@@ -15,13 +15,13 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Phone',
-      details: '+966 (11) 123-4567',
-      action: 'tel:+966111234567',
+      details: '+966 54 118 9716',
+      action: 'tel:+966541189716',
     },
     {
       icon: MapPin,
       title: 'Office',
-      details: 'Riyadh, Saudi Arabia',
+      details: 'Kingdom of Saudi Arabia',
       action: '#',
     },
   ];

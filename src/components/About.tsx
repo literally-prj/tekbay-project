@@ -1,4 +1,3 @@
-
 import { CheckCircle, Award, Users, Lightbulb } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 
@@ -10,7 +9,7 @@ const About = () => {
 
   const stats = [
     { number: '99.9%', label: 'System Uptime', icon: '⚡' },
-    { number: '500+', label: 'Projects Delivered', icon: '🚀' },
+    { number: '50+', label: 'Projects Delivered', icon: '🚀' },
     { number: '24/7', label: 'Operations', icon: '🤖' },
     { number: '∞', label: 'Scalability', icon: '🌐' },
   ];
@@ -166,11 +165,11 @@ const About = () => {
           ))}
         </div>
 
-        {/* Vision 2030 showcase */}
+        {/* Vision 2030 showcase - removed NEOM */}
         <div className="mt-24 text-center">
           <div className="inline-flex items-center space-x-8 px-10 py-6 glass rounded-3xl border border-slate-700/50 hover:border-cyan-400/30 transition-all duration-700">
             <span className="text-slate-400 text-lg font-semibold">Supporting:</span>
-            {['Saudi Vision 2030', 'Digital Economy', 'NEOM Initiative', 'Smart Cities'].map((initiative, index) => (
+            {['Saudi Vision 2030', 'Digital Economy', 'Smart Cities'].map((initiative, index) => (
               <div key={index} className="px-6 py-3 bg-gradient-to-r from-cyan-600/20 to-purple-600/20 rounded-xl border border-cyan-400/20 hover:border-cyan-400/40 transition-all duration-500 hover:scale-105">
                 <span className="text-gradient font-bold text-sm">{initiative}</span>
               </div>

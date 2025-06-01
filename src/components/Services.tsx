@@ -1,5 +1,5 @@
 
-import { Truck, Package, Shield, Network, Building2, Zap, ArrowUpRight, Cpu } from 'lucide-react';
+import { Shield, Building2, Truck, Network, ArrowUpRight, Cpu } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 
 const Services = () => {
@@ -9,29 +9,8 @@ const Services = () => {
 
   const services = [
     {
-      icon: Truck,
-      title: 'Freight & Transportation',
-      description: 'Full range of freight and transportation solutions from international freight to bespoke solutions across ground, sea, and air.',
-      features: ['Ground Freight Access', 'Sea Freight (FCL & LCL)', 'Air Freight Delivery', 'RORO Transport', 'Cross-Border Solutions'],
-      color: 'from-orange-500 to-red-500'
-    },
-    {
-      icon: Package,
-      title: 'B2B Supply Chain',
-      description: 'Multi-temperature facilities across the Kingdom offering flexible warehousing and transportation solutions for various industries.',
-      features: ['Third-Party Logistics (3PL)', 'Fourth-Party Logistics (4PL)', 'Nationwide Coverage', 'SFDA Approved & ISO Certified', 'Cold-Chain Management'],
-      color: 'from-green-500 to-emerald-500'
-    },
-    {
-      icon: Network,
-      title: 'E-Commerce Solutions',
-      description: 'Ecommerce warehousing and order fulfillment services bringing the best of technology and innovation together.',
-      features: ['Storage & Fulfillment', 'Last Mile Delivery', 'International Shipping'],
-      color: 'from-purple-500 to-violet-500'
-    },
-    {
       icon: Shield,
-      title: 'IT Security Solutions',
+      title: 'IT & Cybersecurity',
       description: 'Comprehensive cybersecurity and IT infrastructure solutions including data center services, networking, and security.',
       features: ['Data Center & Cloud Solutions', 'Enterprise Networking', 'Cybersecurity & Compliance', 'Professional Services', 'Digital Transformation'],
       color: 'from-cyan-500 to-blue-500'
@@ -44,11 +23,18 @@ const Services = () => {
       color: 'from-amber-500 to-orange-500'
     },
     {
-      icon: Zap,
-      title: 'Digital Transformation',
-      description: 'Regional leader in digital, cloud and cybersecurity solutions, preparing businesses for tomorrow with innovative technology.',
-      features: ['Cloud Solutions', 'AI Integration', 'Process Automation', 'Digital Strategy', 'Technology Consulting'],
-      color: 'from-indigo-500 to-purple-500'
+      icon: Truck,
+      title: 'Logistics Solutions',
+      description: 'Full range of freight and transportation solutions from international freight to bespoke solutions across ground, sea, and air.',
+      features: ['Ground Freight Access', 'Sea Freight (FCL & LCL)', 'Air Freight Delivery', 'RORO Transport', 'Cross-Border Solutions'],
+      color: 'from-orange-500 to-red-500'
+    },
+    {
+      icon: Network,
+      title: 'E-Commerce Solutions',
+      description: 'Ecommerce warehousing and order fulfillment services bringing the best of technology and innovation together.',
+      features: ['Storage & Fulfillment', 'Last Mile Delivery', 'International Shipping'],
+      color: 'from-purple-500 to-violet-500'
     },
   ];
 
@@ -95,13 +81,13 @@ const Services = () => {
           </h2>
           
           <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed animate-fade-in-up">
-            Comprehensive digital transformation solutions across logistics, supply chain, IT, and contracting services 
+            Comprehensive solutions across logistics, supply chain, IT, and contracting services 
             engineered for Saudi Arabia's Vision 2030.
           </p>
         </div>
 
         {/* Service grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {services.map((service, index) => (
             <div 
               key={index}
@@ -156,7 +142,7 @@ const Services = () => {
         <div className="mt-20 text-center">
           <div className="inline-flex items-center space-x-6 glass px-8 py-4 rounded-xl">
             <span className="text-slate-400 font-medium">Supporting:</span>
-            {['Vision 2030', 'Digital Transformation', 'Smart Cities', 'NEOM'].map((tech, index) => (
+            {['Vision 2030', 'Digital Transformation', 'Smart Cities'].map((tech, index) => (
               <div key={index} className="px-4 py-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 rounded-lg">
                 <span className="text-cyan-300 font-semibold text-sm">{tech}</span>
               </div>
