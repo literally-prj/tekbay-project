@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X, Zap, Shield, Globe } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -58,16 +57,6 @@ const Navigation = () => {
             </div>
           </div>
 
-          {/* CTA button */}
-          <div className="hidden md:block">
-            <Button className="btn-primary text-white px-8 py-3 text-lg font-semibold rounded-xl">
-              <span className="flex items-center">
-                <Zap className="mr-2 h-5 w-5" />
-                Launch Project
-              </span>
-            </Button>
-          </div>
-
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
@@ -98,12 +87,6 @@ const Navigation = () => {
                 {item.name}
               </a>
             ))}
-            <div className="pt-4">
-              <Button className="w-full btn-primary text-white py-3 text-lg font-semibold rounded-xl">
-                <Zap className="mr-2 h-5 w-5" />
-                Launch Project
-              </Button>
-            </div>
           </div>
         </div>
       </div>
