@@ -123,13 +123,13 @@ const Hero = () => {
             <Globe className="h-6 w-6 text-cyan-400 animate-pulse-slow" />
           </div>
           
-          {/* Logo instead of text */}
+          {/* Logo */}
           <div className="space-y-6">
             <div className="flex justify-center mb-8">
               <img 
-                src="/lovable-uploads/ec1d4e64-84b4-45a4-82c3-6cca7b51c8ae.png" 
+                src="/lovable-uploads/a79daf2d-99ec-4d4e-a37b-1524822dac84.png" 
                 alt="TEKBAY Logo" 
-                className="h-32 w-auto object-contain"
+                className="h-40 w-auto object-contain"
               />
             </div>
             
