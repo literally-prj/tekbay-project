@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X, Zap, Shield, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +31,7 @@ const Navigation = () => {
       <div className="container-max px-6">
         <div className="flex justify-between items-center h-20">
           {/* Logo with consistent theme */}
-          <div className="flex-shrink-0 group flex items-center space-x-3">
+          <Link to="/" className="flex-shrink-0 group flex items-center space-x-3">
             <div className="flex items-center space-x-2">
               <Zap className="h-6 w-6 text-cyan-400" />
               <Shield className="h-5 w-5 text-blue-400" />
@@ -39,7 +40,7 @@ const Navigation = () => {
             <span className="text-2xl font-black text-gradient cursor-pointer group-hover:scale-105 transition-transform duration-300">
               TEKBAY
             </span>
-          </div>
+          </Link>
 
           {/* Desktop navigation */}
           <div className="hidden md:block">

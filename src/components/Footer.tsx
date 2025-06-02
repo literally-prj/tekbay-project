@@ -1,5 +1,6 @@
 
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -9,9 +10,9 @@ const Footer = () => {
           {/* Company Info */}
           <div className="md:col-span-2">
             <div className="mb-6">
-              <span className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              <Link to="/" className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                 TEKBAY
-              </span>
+              </Link>
             </div>
             <p className="text-slate-400 leading-relaxed mb-6 max-w-md">
               Your trusted partner in logistics and supply chain solutions, focused on precision, 
@@ -37,10 +38,10 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">IT & Cybersecurity</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">General Contracting</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Logistics Solutions</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">E-Commerce Solutions</a></li>
+              <li><Link to="/it-cybersecurity" className="hover:text-cyan-400 transition-colors">IT & Cybersecurity</Link></li>
+              <li><Link to="/general-contracting" className="hover:text-cyan-400 transition-colors">General Contracting</Link></li>
+              <li><Link to="/logistics-solutions" className="hover:text-cyan-400 transition-colors">Logistics Solutions</Link></li>
+              <li><Link to="/ecommerce-solutions" className="hover:text-cyan-400 transition-colors">E-Commerce Solutions</Link></li>
             </ul>
           </div>
 

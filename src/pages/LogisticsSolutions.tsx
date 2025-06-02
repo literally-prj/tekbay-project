@@ -7,27 +7,27 @@ const LogisticsSolutions = () => {
   const services = [
     {
       title: 'Third-Party Logistics (3PL)',
-      description: 'Comprehensive third-party logistics services for efficient supply chain management.',
+      description: 'Comprehensive third-party logistics services for efficient supply chain management, including warehousing, distribution, and inventory management.',
       icon: Package
     },
     {
       title: 'Fourth-Party Logistics (4PL)',
-      description: 'Strategic fourth-party logistics management and optimization solutions.',
+      description: 'Strategic fourth-party logistics management and optimization solutions, providing end-to-end supply chain orchestration.',
       icon: Globe
     },
     {
       title: 'Nationwide Coverage',
-      description: 'Access to storage facilities and transportation in major cities as well as remote locations.',
+      description: 'Access to storage facilities and transportation networks in major cities as well as remote locations across the Kingdom.',
       icon: Truck
     },
     {
       title: 'SFDA Approved & ISO Certified',
-      description: 'High standardized climate-controlled warehousing under one roof.',
+      description: 'High standardized climate-controlled warehousing facilities operating under the highest quality and safety standards.',
       icon: Package
     },
     {
-      title: 'Cold-Chain Logistics Management Coverage',
-      description: 'Frozen, ambient & chilled storage and transportation solutions.',
+      title: 'Cold-Chain Logistics Management',
+      description: 'Specialized frozen, ambient & chilled storage and transportation solutions maintaining product integrity throughout the supply chain.',
       icon: Package
     }
   ];
@@ -35,71 +35,79 @@ const LogisticsSolutions = () => {
   const freightServices = [
     {
       title: 'Ground Freight',
-      description: 'Access the largest transportation network in the GCC and the Middle East.',
+      description: 'Access the largest transportation network in the GCC and the Middle East with comprehensive ground freight solutions.',
       icon: Truck
     },
     {
       title: 'Sea Freight',
-      description: 'Choose from a wide variety of services (FCL & LCL) that matches the size and weight of your goods.',
+      description: 'Choose from a wide variety of sea freight services (FCL & LCL) that matches the size and weight of your goods with competitive rates.',
       icon: Ship
     },
     {
       title: 'Air Freight',
-      description: 'Ship your cargo to any place in the world with delivery speed that meets your requirements.',
+      description: 'Ship your cargo to any destination worldwide with delivery speed and reliability that meets your urgent requirements.',
       icon: Plane
     },
     {
-      title: 'RORO',
-      description: 'Transport your trucks, trailers, tractors and cars as well as rolling assets through Starlinks.',
+      title: 'RORO Services',
+      description: 'Transport your trucks, trailers, tractors and cars as well as rolling assets through our specialized RORO services.',
       icon: Truck
     },
     {
       title: 'Cross-Border Transportation',
-      description: 'Offering a vast range of dry and temperature-controlled fleets covering the GCC.',
+      description: 'Offering a vast range of dry and temperature-controlled fleets covering the GCC region with seamless customs clearance.',
       icon: Globe
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black">
+    <div className="min-h-screen">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6">
+      {/* Hero Section with Background */}
+      <section 
+        className="relative pt-32 pb-20 px-6 bg-cover bg-center bg-fixed"
+        style={{
+          backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('/lovable-uploads/5ec2875a-d527-4bfd-b18a-8a86e869ae7d.png')`
+        }}
+      >
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-6xl md:text-8xl font-black text-white mb-8">
+          <h1 className="text-5xl md:text-7xl font-black text-white mb-8">
             Logistics <span className="text-gradient">Solutions</span>
           </h1>
-          <div className="space-y-6 text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed mb-12">
+          <div className="max-w-5xl mx-auto space-y-6 text-lg md:text-xl text-slate-200 leading-relaxed">
             <p>
               TEKBAY is your trusted partner in logistics and supply chain solutions, focused on precision, 
               efficiency, and reliability. We offer end-to-end services including transportation, warehousing, 
               and distribution to help businesses operate smarter and save costs.
             </p>
             <p>
-              With advanced tracking, a skilled team, and a strong delivery network, we ensure timely, 
-              dependable service from freight forwarding to last-mile delivery—tailored to your needs.
+              With advanced tracking systems, a skilled professional team, and a robust delivery network, we ensure timely, 
+              dependable service from freight forwarding to last-mile delivery—tailored to your specific business needs.
             </p>
             <p>
-              We simplify logistics so you can focus on growth, offering transparent, scalable solutions that 
-              keep your business moving forward.
+              We simplify logistics complexities so you can focus on growth, offering transparent, scalable solutions that 
+              keep your business moving forward in today's competitive marketplace.
             </p>
           </div>
         </div>
       </section>
 
       {/* B2B Supply Chain Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-gradient-to-br from-slate-900 via-gray-900 to-black">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-8 text-center">
-            B2B Supply <span className="text-gradient">Chain</span>
-          </h2>
-          <p className="text-xl text-slate-300 text-center mb-16 max-w-4xl mx-auto">
-            Our multi-temperature facilities across the Kingdom offer our clients flexible warehousing 
-            and transportation solutions, which cater to a variety of industries and sectors.
-          </p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
+              B2B Supply <span className="text-gradient">Chain</span>
+            </h2>
+            <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+              Our multi-temperature facilities across the Kingdom offer our clients flexible warehousing 
+              and transportation solutions, which cater to a variety of industries and sectors with the highest 
+              standards of quality and efficiency.
+            </p>
+          </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             {services.map((service, index) => (
               <div 
                 key={index}
@@ -123,15 +131,17 @@ const LogisticsSolutions = () => {
       </section>
 
       {/* Freight and Transportation Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-slate-800">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-8 text-center">
-            Freight and <span className="text-gradient">Transportation</span>
-          </h2>
-          <p className="text-xl text-slate-300 text-center mb-16 max-w-4xl mx-auto">
-            Full range of Freight and Transportation solutions from international freight & temperature-controlled 
-            first mile to bespoke solutions across ground, sea, and air.
-          </p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
+              Freight and <span className="text-gradient">Transportation</span>
+            </h2>
+            <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+              Full range of freight and transportation solutions from international freight & temperature-controlled 
+              first mile to bespoke solutions across ground, sea, and air with comprehensive tracking and monitoring.
+            </p>
+          </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {freightServices.map((service, index) => (
@@ -152,6 +162,18 @@ const LogisticsSolutions = () => {
                 </p>
               </div>
             ))}
+          </div>
+
+          {/* Additional Info Section */}
+          <div className="mt-20 glass-card p-12 rounded-3xl text-center">
+            <h3 className="text-3xl font-bold text-white mb-6">
+              Seamless Global <span className="text-gradient">Connectivity</span>
+            </h3>
+            <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+              Our integrated logistics platform provides real-time visibility, predictive analytics, and proactive 
+              communication to ensure your supply chain operates at peak efficiency while maintaining the flexibility 
+              to adapt to changing market demands.
+            </p>
           </div>
         </div>
       </section>

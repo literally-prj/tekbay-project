@@ -9,64 +9,80 @@ const ITCybersecurity = () => {
       title: 'Data Center & Hybrid IT Solutions',
       description: 'Robust infrastructure services including servers, storage, virtualization, cloud, HCI, VDI, backup, patch management, and business continuity—designed for high availability and performance.',
       icon: Server,
-      image: '/lovable-uploads/29902099-b9cf-4b8f-8abc-8f0cafdb14f6.png'
     },
     {
       title: 'Enterprise Networking Solutions',
       description: 'Enterprise Networking (Routers, Switches, Wireless, Structured Cabling), Mobility & Next Gen Wireless, SD-WAN, Industrial Infrastructure & Connectivity, Internet of Things [IoT]',
       icon: Network,
-      image: '/lovable-uploads/29902099-b9cf-4b8f-8abc-8f0cafdb14f6.png'
     },
     {
       title: 'PCS, Consumables & Office Solutions',
       description: 'PCs, Laptops, Tablets, Thin client, Printers & Scanners, Barcode Scanners, POS Machines',
       icon: Cpu,
-      image: '/lovable-uploads/29902099-b9cf-4b8f-8abc-8f0cafdb14f6.png'
     },
     {
       title: 'Security Solutions',
       description: 'Network Security (Next Generation Firewalls), Endpoint Security, Cloud Security, Email Security, Cybersecurity, Data Protection, Compliance, Proxy & WebFilter, Industrial Cybersecurity',
       icon: Shield,
-      image: '/lovable-uploads/29902099-b9cf-4b8f-8abc-8f0cafdb14f6.png'
     },
     {
       title: 'Professional & Managed Services',
       description: 'AMC & Advanced Professional Services, Cloud-based Security Operations Center (SOC), Cyber Incident Response & Penetration Testing, Structured Cabling & DIAS (Dedicated Internet Access), Outsourced IT Manpower Solutions',
       icon: Eye,
-      image: '/lovable-uploads/29902099-b9cf-4b8f-8abc-8f0cafdb14f6.png'
     },
     {
       title: 'Digitalization',
       description: 'Software License Management, Automated IT Onboarding & Offboarding tool, SaaS, Spend Tracking & Optimization, Business Application, Data & Automation, Application Development',
       icon: Lock,
-      image: '/lovable-uploads/29902099-b9cf-4b8f-8abc-8f0cafdb14f6.png'
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black">
+    <div className="min-h-screen">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6">
+      {/* Hero Section with Background */}
+      <section 
+        className="relative pt-32 pb-20 px-6 bg-cover bg-center bg-fixed"
+        style={{
+          backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('/lovable-uploads/9302018b-1ca1-4458-92b9-91dc33875a1f.png')`
+        }}
+      >
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-6xl md:text-8xl font-black text-white mb-8">
+          <h1 className="text-5xl md:text-7xl font-black text-white mb-8">
             IT & <span className="text-gradient">Cybersecurity</span>
           </h1>
-          <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed mb-12">
-            As the industry's premier technology integrator, we are also the leading provider of On-Demand 
-            Business infrastructures, affording our customers customized technology integration packages to 
-            optimize their efficiency.
-          </p>
+          <div className="max-w-5xl mx-auto space-y-6 text-lg md:text-xl text-slate-200 leading-relaxed">
+            <p>
+              As the industry's premier technology integrator, we are also the leading provider of On-Demand 
+              Business infrastructures, affording our customers customized technology integration packages to 
+              optimize their efficiency.
+            </p>
+            <p>
+              Our comprehensive IT solutions encompass everything from robust data center infrastructure and 
+              enterprise networking to cutting-edge cybersecurity measures. We provide end-to-end technology 
+              services that enable businesses to operate securely, efficiently, and at scale.
+            </p>
+            <p>
+              With a focus on digital transformation and emerging technologies, we help organizations navigate 
+              the complex IT landscape while maintaining the highest standards of security and performance.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* IT Offerings Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-gradient-to-br from-slate-900 via-gray-900 to-black">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-16 text-center">
-            IT <span className="text-gradient">Offerings</span>
-          </h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
+              IT <span className="text-gradient">Offerings</span>
+            </h2>
+            <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+              Comprehensive technology solutions designed to modernize your infrastructure, 
+              enhance security posture, and drive operational excellence across your organization.
+            </p>
+          </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {offerings.map((offering, index) => (
@@ -87,6 +103,18 @@ const ITCybersecurity = () => {
                 </p>
               </div>
             ))}
+          </div>
+
+          {/* Additional Info Section */}
+          <div className="mt-20 glass-card p-12 rounded-3xl text-center">
+            <h3 className="text-3xl font-bold text-white mb-6">
+              Comprehensive Technology <span className="text-gradient">Partnership</span>
+            </h3>
+            <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+              We don't just provide technology solutions; we become your strategic IT partner. Our team of 
+              certified professionals works closely with your organization to understand your unique challenges 
+              and deliver customized solutions that align with your business objectives and drive measurable results.
+            </p>
           </div>
         </div>
       </section>
