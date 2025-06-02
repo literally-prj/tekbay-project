@@ -1,3 +1,4 @@
+
 import { CheckCircle, Award, Users, Lightbulb } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 
@@ -95,10 +96,29 @@ const About = () => {
             About <span className="text-gradient">TEKBAY</span>
           </h2>
           
-          <p className="text-xl md:text-2xl text-slate-300 max-w-5xl mx-auto leading-relaxed mt-12 animate-fade-in-up delay-300">
-            Your trusted partner in logistics and supply chain solutions, focused on precision, efficiency, and reliability. 
-            As the industry's premier technology integrator, we offer comprehensive digital transformation services.
-          </p>
+          <div className="space-y-8 text-xl md:text-2xl text-slate-300 max-w-5xl mx-auto leading-relaxed mt-12 animate-fade-in-up delay-300">
+            <p>
+              As the industry's premier technology integrator, we are also the leading provider of On-Demand 
+              Business infrastructures, affording our customers customized technology integration packages to 
+              optimize their efficiency.
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-8 mt-16">
+              <div className="glass-card p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold text-cyan-400 mb-4">Managed Services & Operations</h3>
+                <p className="text-lg text-slate-300">
+                  Our observability and autonomous management allow you to focus on unprecedented opportunities.
+                </p>
+              </div>
+              
+              <div className="glass-card p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold text-cyan-400 mb-4">Cognitive IT Services Management</h3>
+                <p className="text-lg text-slate-300">
+                  AI-enabled service management advances workforce productivity.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Stats */}
@@ -165,7 +185,7 @@ const About = () => {
           ))}
         </div>
 
-        {/* Vision 2030 showcase - removed NEOM */}
+        {/* Vision 2030 showcase */}
         <div className="mt-24 text-center">
           <div className="inline-flex items-center space-x-8 px-10 py-6 glass rounded-3xl border border-slate-700/50 hover:border-cyan-400/30 transition-all duration-700">
             <span className="text-slate-400 text-lg font-semibold">Supporting:</span>

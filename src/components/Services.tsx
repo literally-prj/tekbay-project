@@ -1,6 +1,7 @@
 
 import { Shield, Building2, Truck, Network, ArrowUpRight, Cpu } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
@@ -13,28 +14,32 @@ const Services = () => {
       title: 'IT & Cybersecurity',
       description: 'Comprehensive cybersecurity and IT infrastructure solutions including data center services, networking, and security.',
       features: ['Data Center & Cloud Solutions', 'Enterprise Networking', 'Cybersecurity & Compliance', 'Professional Services', 'Digital Transformation'],
-      color: 'from-cyan-500 to-blue-500'
+      color: 'from-cyan-500 to-blue-500',
+      link: '/it-cybersecurity'
     },
     {
       icon: Building2,
       title: 'General Contracting',
       description: 'Trusted leader in general contracting, delivering high-quality, cost-effective solutions with focus on safety and sustainability.',
       features: ['Industrial Material Supply', 'Specialized Contracting', 'Turnkey Construction', 'MEP Services', 'Project Management'],
-      color: 'from-amber-500 to-orange-500'
+      color: 'from-amber-500 to-orange-500',
+      link: '/general-contracting'
     },
     {
       icon: Truck,
       title: 'Logistics Solutions',
       description: 'Full range of freight and transportation solutions from international freight to bespoke solutions across ground, sea, and air.',
       features: ['Ground Freight Access', 'Sea Freight (FCL & LCL)', 'Air Freight Delivery', 'RORO Transport', 'Cross-Border Solutions'],
-      color: 'from-orange-500 to-red-500'
+      color: 'from-orange-500 to-red-500',
+      link: '/logistics-solutions'
     },
     {
       icon: Network,
       title: 'E-Commerce Solutions',
       description: 'Ecommerce warehousing and order fulfillment services bringing the best of technology and innovation together.',
       features: ['Storage & Fulfillment', 'Last Mile Delivery', 'International Shipping'],
-      color: 'from-purple-500 to-violet-500'
+      color: 'from-purple-500 to-violet-500',
+      link: '/ecommerce-solutions'
     },
   ];
 
@@ -89,8 +94,9 @@ const Services = () => {
         {/* Service grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <div 
+            <Link 
               key={index}
+              to={service.link}
               data-index={index}
               className={`service-card group glass-card p-8 rounded-2xl transition-all duration-500 transform hover-lift ${
                 visibleCards.includes(index) 
@@ -134,7 +140,7 @@ const Services = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
