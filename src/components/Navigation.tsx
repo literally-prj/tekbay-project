@@ -8,9 +8,9 @@ const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const navItems = [
-    { name: 'Solutions', href: '#solutions' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Solutions', href: '/solutions' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   useEffect(() => {
@@ -46,14 +46,14 @@ const Navigation = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className="relative px-4 py-2 text-lg font-semibold text-slate-300 hover:text-cyan-400 transition-all duration-300 group"
                 >
                   {item.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 transition-all duration-300 group-hover:w-full"></span>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -78,15 +78,15 @@ const Navigation = () => {
         }`}>
           <div className="glass-card px-4 pt-4 pb-6 space-y-2 mt-4 rounded-xl">
             {navItems.map((item, index) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.href}
                 className="block px-6 py-3 text-lg font-semibold text-slate-300 hover:text-cyan-400 hover:bg-cyan-400/10 rounded-lg transition-all duration-300"
                 onClick={() => setIsOpen(false)}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
