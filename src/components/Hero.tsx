@@ -1,19 +1,22 @@
 
-import { ArrowRight, Play, Shield, Zap, Globe } from 'lucide-react';
+import { ArrowRight, Play, Shield, Zap, Globe, ChevronLeft, ChevronRight, Pause, RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isAutoPlay, setIsAutoPlay] = useState(true);
   
   const backgroundImages = [
-    '/lovable-uploads/29902099-b9cf-4b8f-8abc-8f0cafdb14f6.png',
+    '/lovable-uploads/5ec2875a-d527-4bfd-b18a-8a86e869ae7d.png', // Changed to more relevant tech image
     '/lovable-uploads/43a859b5-46b1-4356-83b5-4591fbef9858.png',
     '/lovable-uploads/9302018b-1ca1-4458-92b9-91dc33875a1f.png'
   ];
 
   useEffect(() => {
+    if (!isAutoPlay) return;
+    
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => 
         (prevIndex + 1) % backgroundImages.length
@@ -21,17 +24,37 @@ const Hero = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [backgroundImages.length]);
+  }, [backgroundImages.length, isAutoPlay]);
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => 
+      (prevIndex + 1) % backgroundImages.length
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === 0 ? backgroundImages.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToImage = (index: number) => {
+    setCurrentImageIndex(index);
+  };
+
+  const toggleAutoPlay = () => {
+    setIsAutoPlay(!isAutoPlay);
+  };
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Rotating background images */}
+      {/* Rotating background images with higher opacity */}
       <div className="absolute inset-0">
         {backgroundImages.map((image, index) => (
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              index === currentImageIndex ? 'opacity-30' : 'opacity-0'
+              index === currentImageIndex ? 'opacity-50' : 'opacity-0'
             }`}
             style={{
               backgroundImage: `url(${image})`,
@@ -41,8 +64,59 @@ const Hero = () => {
             }}
           />
         ))}
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/70 to-slate-900/80"></div>
+        {/* Lighter overlay for better image visibility */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-slate-800/60 to-slate-900/70"></div>
+      </div>
+
+      {/* Image Navigation Controls */}
+      <div className="absolute top-1/2 left-6 transform -translate-y-1/2 z-20">
+        <Button
+          onClick={prevImage}
+          variant="outline"
+          size="icon"
+          className="bg-black/30 border-white/20 text-white hover:bg-black/50 backdrop-blur-sm"
+        >
+          <ChevronLeft className="h-6 w-6" />
+        </Button>
+      </div>
+
+      <div className="absolute top-1/2 right-6 transform -translate-y-1/2 z-20">
+        <Button
+          onClick={nextImage}
+          variant="outline"
+          size="icon"
+          className="bg-black/30 border-white/20 text-white hover:bg-black/50 backdrop-blur-sm"
+        >
+          <ChevronRight className="h-6 w-6" />
+        </Button>
+      </div>
+
+      {/* Image Indicators */}
+      <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="flex space-x-3 items-center">
+          {backgroundImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToImage(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentImageIndex 
+                  ? 'bg-cyan-400 scale-125' 
+                  : 'bg-white/50 hover:bg-white/80'
+              }`}
+            />
+          ))}
+          <div className="ml-4 flex space-x-2">
+            <Button
+              onClick={toggleAutoPlay}
+              variant="outline"
+              size="sm"
+              className="bg-black/30 border-white/20 text-white hover:bg-black/50 backdrop-blur-sm text-xs px-3 py-1"
+            >
+              {isAutoPlay ? <Pause className="h-3 w-3 mr-1" /> : <RotateCcw className="h-3 w-3 mr-1" />}
+              {isAutoPlay ? 'Pause' : 'Auto'}
+            </Button>
+          </div>
+        </div>
       </div>
 
       {/* Animated background elements */}
