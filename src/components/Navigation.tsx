@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Menu, X, Zap, Shield, Globe } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Navigation = () => {
@@ -30,16 +30,13 @@ const Navigation = () => {
     }`}>
       <div className="container-max px-6">
         <div className="flex justify-between items-center h-20">
-          {/* Logo with consistent theme */}
-          <Link to="/" className="flex-shrink-0 group flex items-center space-x-3">
-            <div className="flex items-center space-x-2">
-              <Zap className="h-6 w-6 text-cyan-400" />
-              <Shield className="h-5 w-5 text-blue-400" />
-              <Globe className="h-4 w-4 text-cyan-400" />
-            </div>
-            <span className="text-2xl font-black text-gradient cursor-pointer group-hover:scale-105 transition-transform duration-300">
-              TEKBAY
-            </span>
+          {/* Logo */}
+          <Link to="/" className="flex-shrink-0 group">
+            <img 
+              src="/lovable-uploads/a79daf2d-99ec-4d4e-a37b-1524822dac84.png" 
+              alt="TEKBAY Logo" 
+              className="h-12 group-hover:scale-105 transition-transform duration-300"
+            />
           </Link>
 
           {/* Desktop navigation */}
